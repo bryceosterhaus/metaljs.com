@@ -1144,7 +1144,6 @@ body {
 	 ========================================================================== */
 .topbar {
   height: 36px;
-  line-height: 30px;
   padding: 53px 0 0;
 }
 
@@ -1152,23 +1151,26 @@ body {
   float: left;
 }
 
-.topbar-logo-img {
+.topbar-logo-image {
   float: left;
+  padding: 4px 0;
 }
 
-.topbar-logo-txt {
-  color: #fff;
+.topbar-logo-text {
+  color: white;
   display: inline-block;
   font-family: "aktiv-grotesk-std", sans-serif;
   font-size: 17px;
   font-weight: 700;
   margin: 0 0 0 20px;
+  padding: 8px 0;
 }
 
 .topbar-menu {
   float: right;
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .topbar-menu-item {
@@ -1181,13 +1183,19 @@ body {
 }
 
 .topbar-menu-link {
-  color: #fff;
+  transition: color 0.3s ease-in-out;
+  color: white;
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
 }
 
+.topbar-menu-link:hover {
+  color: #9552ef;
+}
+
 .topbar-menu-github {
+  transition: opacity 0.3s ease-in-out;
   background: #9552ef;
   border-radius: 50%;
   display: block;
@@ -1197,6 +1205,10 @@ body {
   line-height: 36px;
 }
 
+.topbar-menu-github:hover {
+  opacity: 0.8;
+}
+
 /* Tagline
 	 ========================================================================== */
 .tagline {
@@ -1204,7 +1216,7 @@ body {
 }
 
 .tagline-title {
-  color: #fff;
+  color: white;
   font-family: "aktiv-grotesk-std", sans-serif;
   font-size: 72px;
   font-weight: 200;
@@ -1216,7 +1228,7 @@ body {
   background: #9552ef;
   border-radius: 8px;
   border: none;
-  color: #fff;
+  color: white;
   display: block;
   float: left;
   font-family: "aktiv-grotesk-std", sans-serif;
@@ -1247,7 +1259,7 @@ body {
 
 .tagline-button.tagline-button-inverted {
   background: none;
-  color: #fff;
+  color: white;
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
@@ -1275,7 +1287,7 @@ body {
 }
 
 .tagline-button:hover {
-  color: #fff;
+  color: white;
 }
 
 .tagline-button:hover::before,
@@ -1287,4 +1299,46 @@ body {
 .tagline-button:hover::after {
   -webkit-transition-delay: 0.175s;
   transition-delay: 0.175s;
+}
+
+/* ==========================================================================
+	 Header - Small devices
+	 ========================================================================== */
+@media (max-width: 767px) {
+  .topbar-logo-text {
+    margin: 0 0 0 10px;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .topbar-menu-item {
+    margin: 0 7px;
+  }
+
+  .topbar-menu-link {
+    font-size: 14px;
+  }
+
+  .tagline {
+    margin: 53px 0 53px 0;
+  }
+
+  .tagline-title {
+    font-size: 38px;
+    line-height: 52px;
+    margin: 0 0 53px;
+    text-align: center;
+  }
+
+  .tagline-button {
+    float: none;
+    font-size: 16px;
+    height: 50px;
+    margin: 20px auto;
+    width: 200px;
+  }
+
+  .tagline-button:last-child {
+    margin: 20px auto;
+  }
 }
