@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 19 19" enable-background="new 0 0 19 19" xml:space="preserve">
-<path d="M2,0C0.9,0,0,0.9,0,2v15c0,1.1,0.9,2,2,2h15c1.1,0,2-0.9,2-2V2c0-1.1-0.9-2-2-2H2z M5,2v3H2V2H5z M9,2v3H6V2H9z M13,2v3h-3
-	V2H13z M5,6v3H2V6H5z M9,6v3H6V6H9z M17,6v3h-3V6H17z M5,10v3H2v-3H5z M13,10v3h-3v-3H13z M17,10v3h-3v-3H17z M9,14v3H6v-3H9z
-	 M13,14v3h-3v-3H13z M17,14v3h-3v-3H17z"/>
+	 viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+<path fill="#9552EF" d="M105.3,0C47.4,0,0,47.4,0,105.3v789.5C0,952.6,47.4,1000,105.3,1000h789.5c57.9,0,105.3-47.4,105.3-105.3
+	V105.3C1000,47.4,952.6,0,894.7,0H105.3z M263.2,105.3v157.9H105.3V105.3H263.2z M473.7,105.3v157.9H315.8V105.3H473.7z
+	 M684.2,105.3v157.9H526.3V105.3H684.2z M263.2,315.8v157.9H105.3V315.8H263.2z M473.7,315.8v157.9H315.8V315.8H473.7z M894.7,315.8
+	v157.9H736.8V315.8H894.7z M263.2,526.3v157.9H105.3V526.3H263.2z M684.2,526.3v157.9H526.3V526.3H684.2z M894.7,526.3v157.9H736.8
+	V526.3H894.7z M473.7,736.8v157.9H315.8V736.8H473.7z M684.2,736.8v157.9H526.3V736.8H684.2z M894.7,736.8v157.9H736.8V736.8H894.7z
+	"/>
 </svg>

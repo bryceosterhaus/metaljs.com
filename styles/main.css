@@ -1287,7 +1287,8 @@ body {
 	 ========================================================================== */
 .topbar {
   height: 36px;
-  padding: 45px 0;
+  line-height: 36px;
+  margin: 53px 0;
 }
 
 .topbar-logo {
@@ -1306,7 +1307,6 @@ body {
   font-size: 17px;
   font-weight: 700;
   margin: 0 0 0 20px;
-  padding: 8px 0;
 }
 
 .topbar-menu {
@@ -1334,21 +1334,20 @@ body {
   text-decoration: none;
 }
 
-.topbar-menu-link:hover {
+.topbar-menu-link:hover,
+.topbar-menu-link:focus {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
 }
 
 .topbar-icon-github {
   background: #9552ef;
-  line-height: 37px;
 }
 
 @media (max-width: 767px) {
   .topbar-logo-text {
     margin: 0 0 0 10px;
     font-size: 14px;
-    padding: 10px 0;
   }
 
   .topbar-menu-item {
@@ -1401,7 +1400,7 @@ body {
 /* Tagline
 	 ========================================================================== */
 .tagline {
-  margin: 110px 0 216px 0;
+  margin: 147px 0 216px 0;
 }
 
 .tagline-title {
@@ -1410,7 +1409,7 @@ body {
   font-size: 72px;
   font-weight: 200;
   line-height: 96px;
-  margin: 0 0 80px;
+  margin: 0 0 76px;
 }
 
 .tagline-button {
@@ -1426,16 +1425,17 @@ body {
   height: 72px;
   margin: 0;
   overflow: hidden;
+  padding: 0;
   position: relative;
   transition: color 0.3s;
   vertical-align: middle;
-  width: 270px;
+  width: 276px;
   z-index: 1;
   -webkit-transition: color 0.3s;
 }
 
 .tagline-button:last-child {
-  margin-left: 30px;
+  margin-left: 24px;
 }
 
 .tagline-button:focus {
@@ -1504,27 +1504,28 @@ body {
 	 ========================================================================== */
 .feature {
   text-align: center;
-  margin-top: 110px;
-  margin-bottom: 110px;
+  margin: 108px auto 116px;
+  width: 224px;
 }
 
 .feature-image {
   display: block;
-  margin: 0 auto 42px;
+  margin: 0 auto 39px;
 }
 
 .feature-title {
   color: rgba(35, 50, 64, 0.8);
   font-size: 20px;
   font-weight: 400;
-  margin: 0 0 34px;
+  margin: 0 0 23px;
 }
 
 .feature-description {
   color: rgba(35, 50, 64, 0.6);
   font-size: 16px;
   font-weight: 400;
-  margin: 0 0 34px;
+  line-height: 24px;
+  margin: 0 0 27px;
 }
 
 .feature-link {
@@ -1549,7 +1550,7 @@ body {
   font-family: "aktiv-grotesk-std", sans-serif;
   font-size: 30px;
   font-weight: 300;
-  margin: 74px 0 58px;
+  margin: 64px 0 44px;
 }
 
 .architecture-description {
@@ -1557,10 +1558,12 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  margin-bottom: 24px;
+  width: 386px;
 }
 
 .architecture-image-primary {
-  margin-top: -30px;
+  margin-top: -31px;
 }
 
 .architecture-image-secondary {
@@ -1576,7 +1579,7 @@ body {
   font-size: 15px;
   height: 48px;
   line-height: 48px;
-  margin: 44px 0 96px;
+  margin: 42px 0 96px;
   text-align: center;
   width: 182px;
 }
@@ -1597,12 +1600,13 @@ body {
   font-family: "aktiv-grotesk-std", sans-serif;
   font-size: 24px;
   font-weight: 300;
-  margin: 54px 0 42px;
+  margin: 51px 0 37px;
   text-align: center;
 }
 
 .collection-headline p {
-  margin: 0;
+  line-height: 24px;
+  margin: 0 0 8px;
 }
 
 .collection-headline strong {
@@ -1614,10 +1618,11 @@ body {
   font-family: "aktiv-grotesk-std", sans-serif;
   font-size: 72px;
   font-weight: 200;
-  padding: 50px 0;
-  text-align: center;
-  width: 400px;
+  line-height: 72px;
   margin: 192px auto 0;
+  padding: 47px 0;
+  text-align: center;
+  width: 440px;
 }
 
 .collection-button:hover {
@@ -1646,7 +1651,7 @@ body {
    ========================================================================== */
 .calltoaction {
   background: #9552ef;
-  padding: 120px 0 144px;
+  padding: 116px 0 144px;
   text-align: center;
 }
 
@@ -1655,6 +1660,7 @@ body {
   font-family: "aktiv-grotesk-std", sans-serif;
   font-size: 32px;
   font-weight: 300;
+  line-height: 32px;
   margin: 0;
 }
 
@@ -1668,7 +1674,7 @@ body {
   font-size: 18px;
   font-weight: 400;
   height: 72px;
-  margin: 65px auto 0;
+  margin: 68px auto 0;
   width: 276px;
   line-height: 72px;
 }

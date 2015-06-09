@@ -16,7 +16,7 @@ if (typeof intro == 'undefined') { var intro = {}; }
  * @suppress {checkTypes}
  */
 intro.soyweb = function(opt_data, opt_ignored, opt_ijData) {
-  return soydata.VERY_UNSAFE.ordainSanitizedHtml(soy.$$escapeHtml(main.page({content: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks('<header class="header"><div class="container">' + soy.$$escapeHtml(header.navbar(null, null, opt_ijData)) + '</div></header>')}, null, opt_ijData)));
+  return soydata.VERY_UNSAFE.ordainSanitizedHtml(layout.page({content: soydata.VERY_UNSAFE.$$ordainSanitizedHtmlForInternalBlocks('<header class="header"><div class="container">' + soy.$$escapeHtml(main.navbar(null, null, opt_ijData)) + '</div></header>')}, null, opt_ijData));
 };
 if (goog.DEBUG) {
   intro.soyweb.soyTemplateName = 'intro.soyweb';
