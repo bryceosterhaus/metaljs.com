@@ -1,0 +1,27 @@
+{namespace index}
+
+/**
+ * This template will be rendered by SoyWeb when the user loads static.soy.
+ * It deliberately includes dummy data so the designer can get a feel for how
+ * the task list will appear with real data rather with minimal copy and paste.
+ */
+{template .soyweb}
+{call layout.page}
+	{param content kind="html"}
+		<header class="header">
+			<div class="container">
+				<div class="header-bg"></div>
+				{call main.topbar}{/call}
+				{call home.tagline}{/call}
+			</div>
+		</header>
+		<main>
+			{call home.features}{/call}
+			{call home.architecture}{/call}
+			{call home.collections}{/call}
+			// {call home.callToAction}{/call}
+			// {call main.footer}{/call}
+		</main>
+	{/param}
+{/call}
+{/template}

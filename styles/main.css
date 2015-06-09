@@ -1,4 +1,7 @@
 /* ==========================================================================
+   Overrides
+   ========================================================================== */
+/* ==========================================================================
    Dependencies
    ========================================================================== */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -222,11 +225,127 @@ th {
   padding: 0;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #333333;
+  background-color: #fff;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-rounded {
+  border-radius: 6px;
+}
+
+.img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 .container:before, .container:after {
   content: " ";
@@ -237,25 +356,25 @@ th {
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 744px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 964px;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1164px;
   }
 }
 
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 .container-fluid:before, .container-fluid:after {
   content: " ";
@@ -266,8 +385,8 @@ th {
 }
 
 .row {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -12px;
+  margin-right: -12px;
 }
 .row:before, .row:after {
   content: " ";
@@ -280,8 +399,8 @@ th {
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
@@ -1133,18 +1252,42 @@ body {
   text-size-adjust: 100%;
 }
 
+.rounded-icon {
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 50%;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  width: 36px;
+}
+
 /* ==========================================================================
 	 Header
 	 ========================================================================== */
 .header {
   background: #233240;
+  overflow: hidden;
+}
+
+.header .container {
+  position: relative;
+}
+
+.header-bg {
+  background: url(../images/logo_bg.png) no-repeat;
+  height: 916px;
+  position: absolute;
+  right: -700px;
+  width: 1145px;
+  top: 180px;
 }
 
 /* Topbar
 	 ========================================================================== */
 .topbar {
   height: 36px;
-  padding: 53px 0 0;
+  padding: 45px 0;
 }
 
 .topbar-logo {
@@ -1184,35 +1327,81 @@ body {
 
 .topbar-menu-link {
   transition: color 0.3s ease-in-out;
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "aktiv-grotesk-std", sans-serif;
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
 }
 
 .topbar-menu-link:hover {
-  color: #9552ef;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
 }
 
-.topbar-menu-github {
-  transition: opacity 0.3s ease-in-out;
+.topbar-icon-github {
   background: #9552ef;
-  border-radius: 50%;
-  display: block;
+  line-height: 37px;
+}
+
+@media (max-width: 767px) {
+  .topbar-logo-text {
+    margin: 0 0 0 10px;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .topbar-menu-item {
+    margin: 0 7px;
+  }
+
+  .topbar-menu-link {
+    font-size: 14px;
+  }
+}
+/* ==========================================================================
+	 Footer
+	 ========================================================================== */
+.footer {
+  background: #233240;
+}
+
+.footer-paragraph {
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
   height: 36px;
-  text-align: center;
-  width: 36px;
   line-height: 36px;
+  margin: 54px 0;
 }
 
-.topbar-menu-github:hover {
-  opacity: 0.8;
+.footer-license {
+  float: right;
 }
 
+.footer-link {
+  color: #9552ef;
+  font-weight: 700;
+}
+
+.footer-link:hover {
+  color: #9552ef;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-icon-liferay {
+  background: white;
+  margin-right: 12px;
+}
+
+/* ==========================================================================
+   Home
+   ========================================================================== */
 /* Tagline
 	 ========================================================================== */
 .tagline {
-  margin: 170px 0 216px 0;
+  margin: 110px 0 216px 0;
 }
 
 .tagline-title {
@@ -1221,7 +1410,7 @@ body {
   font-size: 72px;
   font-weight: 200;
   line-height: 96px;
-  margin: 0 0 82px;
+  margin: 0 0 80px;
 }
 
 .tagline-button {
@@ -1246,7 +1435,7 @@ body {
 }
 
 .tagline-button:last-child {
-  margin-left: 24px;
+  margin-left: 30px;
 }
 
 .tagline-button:focus {
@@ -1259,8 +1448,9 @@ body {
 
 .tagline-button.tagline-button-inverted {
   background: none;
-  color: white;
   border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  font-weight: 400;
 }
 
 .tagline-button::before,
@@ -1286,41 +1476,9 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.tagline-button:hover {
-  color: white;
-}
-
-.tagline-button:hover::before,
-.tagline-button:hover::after {
-  -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
-}
-
-.tagline-button:hover::after {
-  -webkit-transition-delay: 0.175s;
-  transition-delay: 0.175s;
-}
-
-/* ==========================================================================
-	 Header - Small devices
-	 ========================================================================== */
 @media (max-width: 767px) {
-  .topbar-logo-text {
-    margin: 0 0 0 10px;
-    font-size: 14px;
-    padding: 10px 0;
-  }
-
-  .topbar-menu-item {
-    margin: 0 7px;
-  }
-
-  .topbar-menu-link {
-    font-size: 14px;
-  }
-
   .tagline {
-    margin: 53px 0 53px 0;
+    margin: 45px 0 53px 0;
   }
 
   .tagline-title {
@@ -1341,4 +1499,181 @@ body {
   .tagline-button:last-child {
     margin: 20px auto;
   }
+}
+/* Features
+	 ========================================================================== */
+.feature {
+  text-align: center;
+  margin-top: 110px;
+  margin-bottom: 110px;
+}
+
+.feature-image {
+  display: block;
+  margin: 0 auto 42px;
+}
+
+.feature-title {
+  color: rgba(35, 50, 64, 0.8);
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 34px;
+}
+
+.feature-description {
+  color: rgba(35, 50, 64, 0.6);
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 34px;
+}
+
+.feature-link {
+  color: #9552ef;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.feature-link:hover {
+  color: #9552ef;
+  text-decoration: none;
+}
+
+/* Architecture
+	 ========================================================================== */
+.architecture {
+  background: rgba(35, 50, 64, 0.05);
+}
+
+.architecture-title {
+  color: rgba(35, 50, 64, 0.7);
+  font-family: "aktiv-grotesk-std", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  margin: 74px 0 58px;
+}
+
+.architecture-description {
+  color: rgba(35, 50, 64, 0.6);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.architecture-image-primary {
+  margin-top: -30px;
+}
+
+.architecture-image-secondary {
+  margin: 30px 0 0 120px;
+}
+
+.architecture-link {
+  border-radius: 24px;
+  border: 1px solid #9552ef;
+  color: #9552ef;
+  display: block;
+  font-family: "aktiv-grotesk-std", sans-serif;
+  font-size: 15px;
+  height: 48px;
+  line-height: 48px;
+  margin: 44px 0 96px;
+  text-align: center;
+  width: 182px;
+}
+
+.architecture-link:hover {
+  color: #9552ef;
+  text-decoration: none;
+}
+
+/* Collection
+   ========================================================================== */
+.collection {
+  height: 552px;
+}
+
+.collection-headline {
+  color: rgba(35, 50, 64, 0.7);
+  font-family: "aktiv-grotesk-std", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  margin: 54px 0 42px;
+  text-align: center;
+}
+
+.collection-headline p {
+  margin: 0;
+}
+
+.collection-headline strong {
+  font-weight: 500;
+}
+
+.collection-button {
+  display: block;
+  font-family: "aktiv-grotesk-std", sans-serif;
+  font-size: 72px;
+  font-weight: 200;
+  padding: 50px 0;
+  text-align: center;
+  width: 400px;
+  margin: 192px auto 0;
+}
+
+.collection-button:hover {
+  text-decoration: none;
+}
+
+.collection-primary {
+  background: #233240 url(../images/alloy_logo.png) no-repeat center center;
+}
+
+.collection-primary .collection-button {
+  border: 1px solid white;
+  color: white;
+}
+
+.collection-secondary {
+  background: #f0f1f2 url(../images/crystal_logo.png) no-repeat center center;
+}
+
+.collection-secondary .collection-button {
+  border: 1px solid rgba(35, 50, 64, 0.4);
+  color: rgba(35, 50, 64, 0.5);
+}
+
+/* Call to action
+   ========================================================================== */
+.calltoaction {
+  background: #9552ef;
+  padding: 120px 0 144px;
+  text-align: center;
+}
+
+.calltoaction-title {
+  color: white;
+  font-family: "aktiv-grotesk-std", sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.calltoaction-button {
+  background: #9552ef;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: white;
+  display: block;
+  font-family: "aktiv-grotesk-std", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  height: 72px;
+  margin: 65px auto 0;
+  width: 276px;
+  line-height: 72px;
+}
+
+.calltoaction-button:hover {
+  color: white;
+  text-decoration: none;
 }
