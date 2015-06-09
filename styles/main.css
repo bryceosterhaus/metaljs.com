@@ -1275,14 +1275,21 @@ body {
 }
 
 .header-bg {
-  background: url(../images/logo_bg.png) no-repeat;
+  background: url(../images/background_header_logo@2x.png) no-repeat;
+  background-size: 1145px 916px;
+  display: none;
   height: 916px;
   position: absolute;
   right: -700px;
-  width: 1145px;
   top: 180px;
+  width: 1145px;
 }
 
+@media (min-width: 768px) {
+  .header-bg {
+    display: block;
+  }
+}
 /* Topbar
 	 ========================================================================== */
 .topbar {
@@ -1291,24 +1298,36 @@ body {
   margin: 53px 0;
 }
 
+@media (max-width: 480px) {
+  .topbar {
+    margin: 53px auto;
+    width: 276px;
+  }
+}
 .topbar-logo {
   float: left;
 }
 
 .topbar-logo-image {
   float: left;
-  padding: 4px 0;
+  margin: 4px 0;
 }
 
 .topbar-logo-text {
   color: white;
   display: inline-block;
   font-family: "aktiv-grotesk-std", sans-serif;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 700;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 10px;
 }
 
+@media (min-width: 768px) {
+  .topbar-logo-text {
+    font-size: 17px;
+    margin: 0 0 0 20px;
+  }
+}
 .topbar-menu {
   float: right;
   list-style: none;
@@ -1318,9 +1337,14 @@ body {
 
 .topbar-menu-item {
   display: inline-block;
-  margin: 0 19px;
+  margin: 0 7px;
 }
 
+@media (min-width: 768px) {
+  .topbar-menu-item {
+    margin: 0 19px;
+  }
+}
 .topbar-menu-item:last-child {
   margin-right: 0;
 }
@@ -1329,11 +1353,16 @@ body {
   transition: color 0.3s ease-in-out;
   color: rgba(255, 255, 255, 0.6);
   font-family: "aktiv-grotesk-std", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   text-decoration: none;
 }
 
+@media (min-width: 768px) {
+  .topbar-menu-link {
+    font-size: 15px;
+  }
+}
 .topbar-menu-link:hover,
 .topbar-menu-link:focus {
   color: rgba(255, 255, 255, 0.6);
@@ -1344,18 +1373,13 @@ body {
   background: #9552ef;
 }
 
-@media (max-width: 767px) {
-  .topbar-logo-text {
-    margin: 0 0 0 10px;
-    font-size: 14px;
+@media (max-width: 480px) {
+  .topbar-menu-item:nth-child(3) {
+    margin-right: 0;
   }
 
-  .topbar-menu-item {
-    margin: 0 7px;
-  }
-
-  .topbar-menu-link {
-    font-size: 14px;
+  .topbar-icon-github {
+    display: none;
   }
 }
 /* ==========================================================================
@@ -1394,15 +1418,25 @@ body {
   margin-right: 12px;
 }
 
+@media (max-width: 480px) {
+  .footer-icon-liferay {
+    display: none;
+  }
+}
 /* ==========================================================================
    Home
    ========================================================================== */
 /* Tagline
 	 ========================================================================== */
 .tagline {
-  margin: 147px 0 216px 0;
+  margin: 45px 0 53px 0;
 }
 
+@media (min-width: 768px) {
+  .tagline {
+    margin: 147px 0 216px 0;
+  }
+}
 .tagline-title {
   color: white;
   font-family: "aktiv-grotesk-std", sans-serif;
@@ -1412,7 +1446,23 @@ body {
   margin: 0 0 76px;
 }
 
+@media (min-width: 480px) and (max-width: 768px) {
+  .tagline-title {
+    font-size: 48px;
+    line-height: 64px;
+    margin: 0 0 53px;
+  }
+}
+@media (max-width: 480px) {
+  .tagline-title {
+    font-size: 44px;
+    line-height: 52px;
+    margin: 0 auto 53px;
+    width: 276px;
+  }
+}
 .tagline-button {
+  -webkit-transition: color 0.3s;
   background: #9552ef;
   border-radius: 8px;
   border: none;
@@ -1431,13 +1481,29 @@ body {
   vertical-align: middle;
   width: 276px;
   z-index: 1;
-  -webkit-transition: color 0.3s;
 }
 
+@media (min-width: 480px) and (max-width: 768px) {
+  .tagline-button {
+    width: 215px;
+  }
+}
+@media (max-width: 480px) {
+  .tagline-button {
+    margin: 20px auto;
+    float: none;
+    width: 276px;
+  }
+}
 .tagline-button:last-child {
-  margin-left: 24px;
+  margin: 0 0 0 24px;
 }
 
+@media (max-width: 480px) {
+  .tagline-button:last-child {
+    margin: 20px auto;
+  }
+}
 .tagline-button:focus {
   outline: none;
 }
@@ -1476,30 +1542,6 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-@media (max-width: 767px) {
-  .tagline {
-    margin: 45px 0 53px 0;
-  }
-
-  .tagline-title {
-    font-size: 38px;
-    line-height: 52px;
-    margin: 0 0 53px;
-    text-align: center;
-  }
-
-  .tagline-button {
-    float: none;
-    font-size: 16px;
-    height: 50px;
-    margin: 20px auto;
-    width: 200px;
-  }
-
-  .tagline-button:last-child {
-    margin: 20px auto;
-  }
-}
 /* Features
 	 ========================================================================== */
 .feature {
@@ -1508,6 +1550,15 @@ body {
   width: 224px;
 }
 
+@media (max-width: 767px) {
+  .features {
+    margin: 48px 0 0;
+  }
+
+  .feature {
+    margin: 0 auto 48px;
+  }
+}
 .feature-image {
   display: block;
   margin: 0 auto 39px;
@@ -1543,6 +1594,7 @@ body {
 	 ========================================================================== */
 .architecture {
   background: rgba(35, 50, 64, 0.05);
+  overflow: hidden;
 }
 
 .architecture-title {
@@ -1550,26 +1602,52 @@ body {
   font-family: "aktiv-grotesk-std", sans-serif;
   font-size: 30px;
   font-weight: 300;
-  margin: 64px 0 44px;
+  margin: 64px 24px 44px;
 }
 
+@media (min-width: 768px) {
+  .architecture-title {
+    margin: 64px 0 44px;
+  }
+}
 .architecture-description {
   color: rgba(35, 50, 64, 0.6);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  margin-bottom: 24px;
-  width: 386px;
+  margin: 0 24px 24px;
+  width: auto;
+}
+
+@media (min-width: 1200px) {
+  .architecture-description {
+    width: 386px;
+  }
+}
+@media (min-width: 768px) {
+  .architecture-description {
+    margin: 0 0 24px;
+  }
+}
+.architecture-image-primary,
+.architecture-image-secondary {
+  display: none;
 }
 
 .architecture-image-primary {
   margin-top: -31px;
 }
 
-.architecture-image-secondary {
-  margin: 30px 0 0 120px;
-}
+@media (min-width: 768px) {
+  .architecture-image-primary,
+  .architecture-image-secondary {
+    display: block;
+  }
 
+  .architecture-image-secondary {
+    margin: 30px 0 0 120px;
+  }
+}
 .architecture-link {
   border-radius: 24px;
   border: 1px solid #9552ef;
@@ -1579,11 +1657,16 @@ body {
   font-size: 15px;
   height: 48px;
   line-height: 48px;
-  margin: 42px 0 96px;
+  margin: 42px auto 96px;
   text-align: center;
   width: 182px;
 }
 
+@media (min-width: 768px) {
+  .architecture-link {
+    margin: 42px 0 96px;
+  }
+}
 .architecture-link:hover {
   color: #9552ef;
   text-decoration: none;
@@ -1595,6 +1678,11 @@ body {
   height: 552px;
 }
 
+@media (max-width: 480px) {
+  .collection {
+    height: 264px;
+  }
+}
 .collection-headline {
   color: rgba(35, 50, 64, 0.7);
   font-family: "aktiv-grotesk-std", sans-serif;
@@ -1625,12 +1713,21 @@ body {
   width: 440px;
 }
 
+@media (max-width: 480px) {
+  .collection-button {
+    font-size: 56px;
+    line-height: 56px;
+    width: 276px;
+    margin: 56px auto 0;
+  }
+}
 .collection-button:hover {
   text-decoration: none;
 }
 
 .collection-primary {
-  background: #233240 url(../images/alloy_logo.png) no-repeat center center;
+  background: #233240 url(../images/alloy_logo@2x.png) no-repeat center center;
+  background-size: 713px 620px;
 }
 
 .collection-primary .collection-button {
@@ -1639,7 +1736,8 @@ body {
 }
 
 .collection-secondary {
-  background: #f0f1f2 url(../images/crystal_logo.png) no-repeat center center;
+  background: #f0f1f2 url(../images/crystal_logo@2x.png) no-repeat center center;
+  background-size: 729px 677px;
 }
 
 .collection-secondary .collection-button {
@@ -1664,6 +1762,11 @@ body {
   margin: 0;
 }
 
+@media (max-width: 480px) {
+  .calltoaction-title {
+    line-height: 48px;
+  }
+}
 .calltoaction-button {
   background: #9552ef;
   border: 1px solid white;
