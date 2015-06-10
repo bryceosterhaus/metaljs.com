@@ -1252,6 +1252,10 @@ body {
   text-size-adjust: 100%;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .rounded-icon {
   transition: opacity 0.3s ease-in-out;
   border-radius: 50%;
