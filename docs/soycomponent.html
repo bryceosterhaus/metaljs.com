@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Metal.js</title><meta name="theme-color" content="#9552ef"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><link rel="shortcut icon" href="/images/favicon.ico"><link rel="stylesheet" href="/styles/main.css"><script src="http://use.typekit.net/qed5qir.js"></script><script>try{Typekit.load();}catch(e){}</script></head><body><header class="header"><div class="container"><div class="header-bg"></div><nav class="topbar"><a class="topbar-logo" href="/"><img class="topbar-logo-image" src="/images/logo_signature@2x.png" alt="Metal.js Logo" width="35" height="28"><h1 class="topbar-logo-text">Metal.js</h1></a><ul class="topbar-menu"><li class="topbar-menu-item"><a class="topbar-menu-link" target="_blank" href="https://github.com/metal/metal.js/wiki/Creating-your-own-component">Intro</a></li><li class="topbar-menu-item"><a class="topbar-menu-link" target="_blank" href="https://github.com/metal/metal.js/wiki">Guides</a></li><li class="topbar-menu-item"><a class="rounded-icon topbar-icon-github" target="_blank" href="https://github.com/metal/metal.js"><img src="/images/github_icon.svg" alt="GitHub Icon" width="16"></a></li></ul></nav></div></header><main class="docs"><div class="container"><div class="row"><nav class="docs-nav col-md-3"><p class="docs-nav-group">Intro</p><ul class="docs-nav-list"><li class="docs-nav-item"><a href="#" class="docs-nav-link">Creating your own component</a></li><li class="docs-nav-item"><a href="#" class="docs-nav-link">Transpiling and building your component</a></li><li class="docs-nav-item"><a href="#" class="docs-nav-link">Testing your component</a></li><li class="docs-nav-item"><a href="#" class="docs-nav-link">Importing a third party component</a></li></ul><p class="docs-nav-group">Guides</p><ul class="docs-nav-list"><li class="docs-nav-item"><a href="/docs/alias.html" class="docs-nav-link">Alias</a></li><li class="docs-nav-item"><a href="/docs/attribute.html" class="docs-nav-link">Attribute</a></li><li class="docs-nav-item"><a href="#" class="docs-nav-link">Soy Component</a></li><li class="docs-nav-item"><a href="#" class="docs-nav-link">Nested Components</a></li><li class="docs-nav-item"><a href="#" class="docs-nav-link">Inline Events</a></li><li class="docs-nav-item"><a href="#" class="docs-nav-link">Decorate</a></li></ul></nav><article class="docs-content col-md-6 col-md-offset-1"><h1>SoyComponent</h1><p>This section will explain how to build rich widgets on Metal.js, by taking advantage of the <strong>SoyComponent</strong> class. By using SoyComponent, you'll be able to easily separate business logic from rendering logic, as it provides an integration with <a href="http://developers.google.com/closure/templates">soy templates</a>.</p><p>Building a widget with SoyComponent is simple, you just need to create two files: one with your soy templates, and the other with your JavaScript logic.</p><p>So, for example, let's say we want to create a widget called <strong>MyWidget</strong>, that has a body and a footer with content. The JavaScript file would look like this:</p><pre><code>
+		import SoyComponent from '../bower_components/metal/src/soy/SoyComponent';
+		import from './myWidget.soy.js';
+
+		class MyWidget extends SoyComponent {
+		    constructor(opt_config) {
+		        super(opt_config);
+		    }
+		}
+
+		MyWidget.ATTRS = {
+		    bodyContent: {
+		        value: 'Initial body content.'
+		    },
+		    footerContent: {
+		        value: SoyComponent.sanitizeHtml('&lt;footer&gt;Initial footer content.&lt;/footer&gt;')
+		    }
+		};
+		</code></pre><p>This file just defines a class named MyWidget, makes it extend from SoyComponent, imports the compiled soy templates and defines two <a href="#attribute">attributes</a>. Note that html strings need to be properly sanitized, otherwise they will be escaped by default before rendering.</p><p>Now we just need a soy file for MyWidget's rendering logic. It would look like this:</p><pre><code>
+		&lbrace;namespace Templates.MyWidget&rbrace;
+
+		/**
+		 * This renders the component's whole content.
+		 * @param elementClasses
+		 * @param id
+		 */
+		&lbrace;template .content&rbrace;
+		  &lt;div id="&lbrace;$id&rbrace;" class="&lbrace;$elementClasses&rbrace;"&gt;
+		    &lbrace;call .body data="all" /&rbrace;
+		    &lbrace;call .footer data="all" /&rbrace;
+		  &lt;/div&gt;
+		&lbrace;/template&rbrace;
+
+		/**
+		 * This renders the body part of the component.
+		 * @param bodyContent
+		 * @param id
+		 */
+		&lbrace;template .body&rbrace;
+		  &lt;div id="&lbrace;$id&rbrace;-body"&gt;
+		    &lt;p&gt;&lbrace;$bodyContent&rbrace;&lt;/p&gt;
+		  &lt;/div&gt;
+		&lbrace;/template&rbrace;
+
+		/**
+		 * This renders the footer part of the component.
+		 * @param footerContent
+		 * @param id
+		 */
+		&lbrace;template .footer&rbrace;
+		  &lt;div id="&lbrace;$id&rbrace;-footer"&gt;
+		    &lt;footer&gt;&lbrace;$footerContent&rbrace;&lt;/footer&gt;
+		  &lt;/div&gt;
+		&lbrace;/template&rbrace;
+		</code></pre><p>Looking at that you can see that it's just a basic soy file that defines some templates. For this soy file to work well with SoyComponent its namespace just needs to be in the format: <code>Templates.&lbrace;name of widget&rbrace;</code>.</p><p>Note that, on the soy file, we have divided the main template into subtemplates, one for the body content and one for the footer. This is not necessary, but can be really helpful, as SoyComponent will handle these as special parts of the widget, automatically rerendering them when one of the attributes listed as params of a template changes. In MyWidget's case this means that whenever the value of the <code>bodyContent</code> attribute is changed, the <code>body</code> template will be called, and that part of the widget will be updated, even though there is no JavaScript code on MyWidget to handle this logic. The same goes for the <code>footerContent</code> attribute and the <code>footer</code> template.</p><p>SoyComponent's logic for updating the widget's contents automatically is very smart, so it won't cause a rerender unless it's necessary. So if a change causes a template to be called again, but the resulting HTML from the template is the same that was rendered for the last time, it will be ignored. This is done by compressing and caching the hash code of a template's results when it's called, and later using it to compare with new results to decide if a new content should be rendered or not.</p><p>Finally, to render an instance of MyWidget, just call <code>render</code>, passing any attribute values that you want to initialize:</p><pre><code>
+		new MyWidget({headerContent: 'My Header'}).render(parentElement);
+		</code></pre><p>For a more complete and working example, take a look at the <a href="https://github.com/metal/metal-boilerplate">metal-boilerplate</a> repo. Among other things, it lists all optional lifecycle functions that can be implemented for SoyComponent.</p></article></div></div></main><footer class="footer"><div class="container"><p class="footer-paragraph"><span class="footer-credits"><a class="rounded-icon footer-icon-liferay" target="_blank" href="http://liferay.com/"><img src="/images/liferay_logo.svg" alt="Liferay Icon" width="19" height="19"></a>Brought to you by <a class="footer-link" target="_blank" href="http://liferay.com/">Liferay, Inc</a>.</span><span class="footer-license"><a class="footer-link" target="_blank" href="https://github.com/metal/metal.js/blob/master/LICENSE.md">BSD</a> License.</span></p></div></footer></body></html>
