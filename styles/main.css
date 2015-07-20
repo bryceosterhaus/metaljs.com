@@ -1981,14 +1981,14 @@ html, body {
 }
 
 /* ==========================================================================
-   Docs
-   ========================================================================== */
+	 Docs
+	 ========================================================================== */
 .docs {
   margin: 100px 0;
 }
 
 /* Navigation
-   ========================================================================== */
+	 ========================================================================== */
 .docs-nav-group {
   color: rgba(35, 50, 64, 0.4);
   font-family: "aktiv-grotesk-std", sans-serif;
@@ -2019,7 +2019,7 @@ html, body {
 }
 
 /* Content
-   ========================================================================== */
+	 ========================================================================== */
 .docs-content {
   color: rgba(35, 50, 64, 0.6);
 }
@@ -2080,12 +2080,14 @@ html, body {
   line-height: 24px;
 }
 
-.docs-content pre {
-  background-color: #fdfcff;
+.docs-content .CodeMirror,
+.docs-content .CodeMirror-scroll {
   border-radius: 4px;
-  border: 1px solid rgba(149, 82, 239, 0.5);
-  line-height: 20px;
-  padding: 1px 0 1px 15px;
+}
+
+.docs-content .CodeMirror pre {
+  line-height: 24px;
+  font-size: 16px;
 }
 
 .docs-content pre code {
@@ -2097,4 +2099,8 @@ html, body {
   background: rgba(149, 82, 239, 0.1);
   color: #9552ef;
   padding: 2px;
+}
+
+.docs-content .CodeMirror {
+  height: auto;
 }
