@@ -1253,6 +1253,10 @@ html, body {
   overflow-x: hidden;
 }
 
+.hidden {
+  display: none;
+}
+
 .rounded-icon {
   transition: opacity 0.3s ease-in-out;
   border-radius: 50%;
@@ -2100,4 +2104,36 @@ html, body {
 
 .docs-content .CodeMirror {
   height: auto;
+}
+
+/* Code Mirror Tabs
+	 ========================================================================== */
+.code-tabs-header {
+  border-bottom: 1px solid rgba(149, 82, 239, 0.2);
+}
+
+.code-tab {
+  background: transparent;
+  border: none;
+  color: rgba(149, 82, 239, 0.6);
+  font-family: "aktiv-grotesk-std", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.code-tab:hover,
+.code-tab:focus {
+  color: #9552ef;
+  outline: none;
+}
+
+.code-tab.selected,
+.code-tab.selected:hover,
+.code-tab.selected:focus {
+  color: #647efb;
+}
+
+.code-tabs .CodeMirror {
+  border: none;
 }
