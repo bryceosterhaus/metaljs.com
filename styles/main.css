@@ -1555,6 +1555,10 @@ html, body {
   width: auto;
 }
 
+.architecture-description:last-child {
+  margin-bottom: 64px;
+}
+
 @media (min-width: 1200px) {
   .architecture-description {
     width: 386px;
@@ -1573,7 +1577,7 @@ html, body {
 }
 
 .architecture-image-primary {
-  margin-top: -31px;
+  margin-top: 60px;
   transform: translate(0px, 0px);
 }
 
