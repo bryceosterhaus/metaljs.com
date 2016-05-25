@@ -28,4 +28,37 @@ render() &lbrace;
 }</textarea><p>State changes are automatically detected by <code>Metal.js</code>, causing the component to be rerendered. Since <code>Metal.js</code>uses <a href="http://google.github.io/incremental-dom/">incremental dom</a>, rerendering will cause minimal dom updates. In this case, the <code>shown</code> css class will be removed from the modal element.</p><h2>Run the demo</h2><p>Now compile your code with <code>npm run build</code> and open the demo on a browser. Clicking the <strong>x</strong> button will close the modal as before, but inspecting the dom you'll notice that it's just hidden, not removed from the dom.</p><h2>Playing with state data</h2><p>State data makes it very easy to update a component's contents. If you want to quickly see it working you can make some experiments on your browser's javascript console for example.</p><p>First let's hold the <code>Modal</code> instance somewhere so we can access it:</p><textarea class="code" data-mode="javascript">window.modal = new metal.Modal({
 	header: 'My Modal',
 	body: 'Built using Metal.js'
-});</textarea><p>Now run the demo again, go to the browser's console and type:<code>modal.shown = false</code>. You'll notice that the modal will be hidden as expected. If you now type <code>modal.shown = true</code>, it will show up again.</p><p>If you want you can also turn <code>header</code> and <code>body</code>into state properties. That way when you type something like <code>modal.header = 'New Header'</code>, the contents will also be updated automatically.</p><h2>Next steps</h2><p>Our modal is working as expected now. But what if you want to split it into multiple components? How would we use them together? Check it out in the next section.</p><p><strong><a href="/docs/modal_nested.html">↪ Tutorial: Modal - Nested Components</a></strong></p></article></div></div></main><footer class="footer"><div class="container"><p class="footer-paragraph"><span class="footer-credits"><a class="rounded-icon footer-icon-liferay" target="_blank" href="http://liferay.com/"><img src="/images/liferay_logo.svg" alt="Liferay Icon" width="19" height="19"></a>Brought to you by <a class="footer-link" target="_blank" href="http://liferay.com/">Liferay, Inc</a>.</span><span class="footer-license"><a class="footer-link" target="_blank" href="https://github.com/metal/metal.js/blob/master/LICENSE.md">BSD</a> License.</span></p></div></footer><script src="/scripts/highlight.js"></script></body></html>
+});</textarea><p>Now run the demo again, go to the browser's console and type: <code>modal.shown = false</code>. You'll notice that the modal will be hidden as expected. If you now type <code>modal.shown = true</code>, it will show up again.</p><p>If you want you can also turn <code>header</code> and <code>body</code> into state properties as well. All you have to do is:</p><ol><li><p>Add them to <code>STATE</code>, like this:</p><textarea class="code" data-mode="javascript">Modal.STATE = {
+	body: {
+		value: 'Default body'
+	},
+	header: {
+		value: 'Default header'
+	},
+	shown: {
+		value: true
+	}
+};</textarea></li><li><p>If you're using JSX templates, change the calls to <code>this.config</code> to call directly from <code>this</code> instead, like this:</p><textarea class="code" data-mode="javascript">render() &lbrace;
+	var cssClass = 'modal';
+	if (this.shown) {
+		cssClass += 'show';
+	}
+	return &lt;div class={cssClass}&gt;
+		&lt;div class="modal-dialog"&gt;
+			&lt;div class="modal-content"&gt;
+				&lt;header class="modal-header"&gt;
+					&lt;button type="button" class="close"&gt;
+						&lt;span&gt;×&lt;/span&gt;
+					&lt;/button&gt;
+					&lt;h4&gt;{this.header}&lt;/h4&gt;
+				&lt;/header&gt;
+				&lt;section class="modal-body"&gt;
+					{this.body}
+				&lt;/section&gt;
+				&lt;footer class="modal-footer"&gt;
+					&lt;button type="button" class="btn btn-primary"&gt;OK&lt;/button&gt;
+				&lt;/footer&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;;
+}</textarea></li></ol><p>Now if you type something like <code>modal.header = 'New Header'</code> on the console, the contents will also be updated automatically.</p><h2>Next steps</h2><p>Our modal is working as expected now. But what if you want to split it into multiple components? How would we use them together? Check it out in the next section.</p><p><strong><a href="/docs/modal_nested.html">↪ Tutorial: Modal - Nested Components</a></strong></p></article></div></div></main><footer class="footer"><div class="container"><p class="footer-paragraph"><span class="footer-credits"><a class="rounded-icon footer-icon-liferay" target="_blank" href="http://liferay.com/"><img src="/images/liferay_logo.svg" alt="Liferay Icon" width="19" height="19"></a>Brought to you by <a class="footer-link" target="_blank" href="http://liferay.com/">Liferay, Inc</a>.</span><span class="footer-license"><a class="footer-link" target="_blank" href="https://github.com/metal/metal.js/blob/master/LICENSE.md">BSD</a> License.</span></p></div></footer><script src="/scripts/highlight.js"></script></body></html>
