@@ -23,10 +23,10 @@ class Modal extends JSXComponent {
 					<CloseHeader
 						cssClass="modal-header"
 						onClick={this.close.bind(this)}
-						title={this.config.header}
+						title={this.header}
 					/>
 					<section class="modal-body">
-						{this.config.body}
+						{this.body}
 					</section>
 					<footer class="modal-footer">
 						<button type="button" class="btn btn-primary">OK</button>
@@ -38,6 +38,12 @@ class Modal extends JSXComponent {
 }
 
 Modal.STATE = {
+	body: {
+		value: 'Default body'
+	},
+	header: {
+		value: 'Default header'
+	},
 	shown: {
 		// The default value will be: `true`.
 		value: true

@@ -16,7 +16,7 @@ class Modal extends JSXComponent {
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<header class="modal-header">
-						<button data-onclick={this.close.bind(this)} type="button" class="close">
+						<button onClick={this.close.bind(this)} type="button" class="close">
 							<span>×</span>
 						</button>
 						<h4>{this.config.header}</h4>

@@ -29,7 +29,7 @@ class Modal extends JSXComponent {
 						{this.body}
 					</section>
 					<footer class="modal-footer">
-						<button type="button" class="btn btn-primary">OK</button>
+						<button type="button" class="btn bt5n-primary">OK</button>
 					</footer>
 				</div>
 			</div>
@@ -38,6 +38,12 @@ class Modal extends JSXComponent {
 }
 
 Modal.STATE = {
+	body: {
+		value: 'Default body'
+	},
+	header: {
+		value: 'Default header'
+	},
 	shown: {
 		// The default value will be: `true`.
 		value: true
