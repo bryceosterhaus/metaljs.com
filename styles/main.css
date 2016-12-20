@@ -266,7 +266,6 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -1384,7 +1383,7 @@ html, body {
   text-decoration: none;
 }
 
-.topbar-icon-github {
+.topbar-icon-external {
   background: #9552ef;
 }
 
@@ -1393,7 +1392,7 @@ html, body {
     margin-right: 0;
   }
 
-  .topbar-icon-github {
+  .topbar-icon-external {
     display: none;
   }
 }
