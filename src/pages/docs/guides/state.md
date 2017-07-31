@@ -53,7 +53,11 @@ Calculator.STATE = {
         validator: val => core.isNumber(val) || core.isString(val),
 
         // Initial value
-        value: 0
+        value: 0,
+
+        // It's also possible to define that a property can only receive a 
+        // value once, and later behave as read-only.
+        writeOnce: false
     }
 }
 ```
