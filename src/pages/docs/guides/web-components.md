@@ -1,13 +1,13 @@
 ---
 title: "Web Components"
-description: "Using metal components as custom elements (web components)."
+description: "Using metal components as web components (custom elements)."
 layout: "guide"
 weight: 230
 ---
 
 <article id="web_components">
 
-## [Custom Elements](#custom_elements)
+## [Web Components](#web_components)
 
 Metal components are generally invoked in one of three ways.
 
@@ -33,7 +33,7 @@ new metal.MyComponent({
 <MyComponent title="Hello, World" />
 ```
 
-However, with the help of the [metal-custom-element](https://www.npmjs.com/package/metal-custom-element) package, Metal components can be invoked as [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Custom_Elements) in
+However, with the help of the [metal-web-component](https://www.npmjs.com/package/metal-web-component) package, Metal components can be invoked as [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Custom_Elements) in
 plain HTML.
 
 ```xml
@@ -46,29 +46,29 @@ plain HTML.
 
 ## [Install](#install)
 
-First step is to install the `metal-custom-element` package.
+First step is to install the `metal-web-component` package.
 
 ```bash
-npm i --save metal-custom-element
+npm i --save metal-web-component
 ```
 
-Currently custom elements do not work on every browser, so a pollyfill must be
+Currently web components do not work on every browser, so a pollyfill must be
 used. Include the [webcomponents-lite pollyfill](https://www.webcomponents.org/polyfills) if
-you intend to use custom elements on Firefox, Edge, or IE11.
+you intend to use web components on Firefox, Edge, or IE11.
 
 </article>
 
-<article id="define_custom_elements">
+<article id="define_web_components">
 
-## [Define custom elements](#define_custom_elements)
+## [Define web components](#define_web_components)
 
 This package exposes a single helper function that can be used to wrap any Metal
-component in a custom element. It receives two arguments, the tag name you want
-the custom element to receive, and the constructor of the Metal component.
+component in a web component. It receives two arguments, the tag name you want
+the web component to receive, and the constructor of the Metal component.
 
 ```javascript
 import JSXComponent from 'metal-jsx';
-import defineWebComponent from 'metal-custom-element';
+import defineWebComponent from 'metal-web-component';
 
 class MyComponent extends JSXComponent {
 	render() {
@@ -85,7 +85,7 @@ MyComponent.PROPS = {
 defineWebComponent('my-component', MyComponent);
 ```
 
-Now that the custom element is defined, it can be invoked in plain html.
+Now that the web component is defined, it can be invoked in plain html.
 
 ```xml
 <my-component message="This is a web component" />
@@ -98,7 +98,7 @@ This will then result in the following HTML on the page.
 ```
 
 If you would like the component's markup to be rendered using the Shadow DOM,
-simply set the `useshadowdom` attribute to `true` when calling the custom element.
+simply set the `useshadowdom` attribute to `true` when calling the web component.
 
 ```xml
 <my-component message="This is a web component" useshadowdom="true" />
