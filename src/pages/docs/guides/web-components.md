@@ -37,7 +37,7 @@ However, with the help of the [metal-web-component](https://www.npmjs.com/packag
 plain HTML.
 
 ```xml
-<my-component title="Hello, World" />
+<my-component title="Hello, World"></my-component>
 ```
 
 </article>
@@ -88,7 +88,7 @@ defineWebComponent('my-component', MyComponent);
 Now that the web component is defined, it can be invoked in plain html.
 
 ```xml
-<my-component message="This is a web component" />
+<my-component message="This is a web component"></my-component>
 ```
 
 This will then result in the following HTML on the page.
@@ -101,7 +101,7 @@ If you would like the component's markup to be rendered using the Shadow DOM,
 simply set the `useshadowdom` attribute to `true` when calling the web component.
 
 ```xml
-<my-component message="This is a web component" useshadowdom="true" />
+<my-component message="This is a web component" useshadowdom="true"></my-component>
 ```
 
 This means that any styling on the page will not cascade to your component's
