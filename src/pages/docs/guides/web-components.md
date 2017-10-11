@@ -9,7 +9,7 @@ weight: 230
 
 ## [Web Components](#web_components)
 
-Metal components are generally invoked in one of three ways.
+Metal components are generally invoked in one of three ways:
 
 1) JavaScript
 
@@ -46,14 +46,14 @@ plain HTML.
 
 ## [Install](#install)
 
-First step is to install the `metal-web-component` package.
+First you must install the `metal-web-component` package:
 
 ```bash
 npm i --save metal-web-component
 ```
 
-Currently web components do not work on every browser, so a pollyfill must be
-used. Include the [webcomponents-lite pollyfill](https://www.webcomponents.org/polyfills) if
+Currently, web components don't work on every browser, so a polyfill must be
+used. Include the [webcomponents-lite polyfill](https://www.webcomponents.org/polyfills) if
 you intend to use web components on Firefox, Edge, or IE11.
 
 </article>
@@ -63,8 +63,8 @@ you intend to use web components on Firefox, Edge, or IE11.
 ## [Define web components](#define_web_components)
 
 This package exposes a single helper function that can be used to wrap any Metal
-component in a web component. It receives two arguments, the tag name you want
-the web component to receive, and the constructor of the Metal component.
+component in a web component. It receives two arguments: the tag name you want
+the web component to receive, and the constructor of the Metal component:
 
 ```javascript
 import JSXComponent from 'metal-jsx';
@@ -85,20 +85,20 @@ MyComponent.PROPS = {
 defineWebComponent('my-component', MyComponent);
 ```
 
-Now that the web component is defined, it can be invoked in plain html.
+Now that the web component is defined, it can be invoked in plain html:
 
 ```xml
 <my-component message="This is a web component"></my-component>
 ```
 
-This will then result in the following HTML on the page.
+This results in the following HTML on the page:
 
 ```xml
 <h1>This is a web component</h1>
 ```
 
 If you would like the component's markup to be rendered using the Shadow DOM,
-simply set the `useshadowdom` attribute to `true` when calling the web component.
+simply set the `useshadowdom` attribute to `true` when calling the web component:
 
 ```xml
 <my-component message="This is a web component" useshadowdom="true"></my-component>
