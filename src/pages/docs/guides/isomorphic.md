@@ -10,7 +10,7 @@ weight: 240
 ## [Server Side Rendering](#server_rendering)
 
 In most cases Metal components will be rendered client side. Let's take the
-following component for example.
+following component for example:
 
 ```jsx
 import JSXComponent from 'metal-jsx';
@@ -30,8 +30,8 @@ MyComponent.PROPS = {
 export default MyComponent;
 ```
 
-After transpiling/bundling this component. It can be invoked in client side
-JavaScript.
+After transpiling/bundling this component, it can be invoked in client side
+JavaScript:
 
 ```javascript
 const component = new metal.MyComponent({
@@ -42,13 +42,13 @@ const component = new metal.MyComponent({
 ```
 
 Rendering a component this way requires DOM manipulation, and the existence of
-various global variables/utilities that are provided by web browsers. This
-means there is no way to render the HTML of this component in a Node.js
-environment without the help of libraries such as `JSDom` that emulate client
+various global variables/utilities that are provided by web browsers. Therefore 
+there is no way to render the HTML of this component in a Node.js
+environment without the help of libraries, such as `JSDom`, that emulate client
 functionality.
 
 However, thanks to the `Component.renderToString` method, out of the box server
-side rendering of Metal components is possible in Node.js environments.
+side rendering of Metal components is possible in Node.js environments:
 
 ```javascript
 const Component = require('metal-component').Component;
